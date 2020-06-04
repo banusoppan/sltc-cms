@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSave()"  *ngIf="!isLoading">
+    <mat-form-field>
+    <input matInput type="text" formControlName="facebook" name="facebook"   placeholder="Facebook">
+    <!--<mat-error *ngIf="form.get('facebook').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+  <br><br>
+  <mat-form-field>
+    <input matInput type="text" formControlName="twitter" name="twitter"   placeholder="Twitter">
+    <!--<mat-error *ngIf="form.get('link').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+  <br><br>
+  <mat-form-field>
+    <input matInput type="text" formControlName="instagram" name="instagram"   placeholder="Instagram">
+    <!--<mat-error *ngIf="form.get('instagram').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+  <br><br>
+  <mat-form-field>
+    <input matInput type="text" formControlName="linkedin" name="linkedin"   placeholder="LinkedIn">
+    <!--<mat-error *ngIf="form.get('linkedin').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+  <br><br>
+  <mat-form-field>
+    <input matInput type="text" formControlName="youtube" name="youtube"   placeholder="Youtube">
+    <!--<mat-error *ngIf="form.get('youtube').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+  <br><br>
+
+
+  <br><br>
+    <button mat-raised-button color="accent" type="submit">save</button>
+
+  </form>
+
+
+</mat-card>
+
+

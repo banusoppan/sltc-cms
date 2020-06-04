@@ -1,0 +1,17 @@
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.spacer{
+  flex : 1 1 auto;
+}
+mat-toolbar{
+  margin-bottom: 20px;
+}
+

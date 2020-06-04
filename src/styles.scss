@@ -1,0 +1,171 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*------Colors-------*/
+$primary-color : #FF5F6D;
+$secondary-color: #FFC371;
+$text-color : #888787;
+$field-border-color : #DADCE0;
+$field-focus-border-color : #1187FF;
+$field-text-color : #000000;
+$placeholder-color : #888787;
+$placeholder-focus-color : #1187FF;
+$green:#11AB5E;
+$blue:#115EAB;
+$link-blue: #297ACC;
+$warn-red:#E14141;
+
+$btn-primary-color:#FF5F6D;
+$btn-primary-color-hover: #FB4454;
+$btn-warning-color: #ff0000;
+$btn-black: #707070;
+$btn-cancel:#9F9F9F;
+$btn-blue: #2EA5FF;
+$btn-edit:#616161;
+
+$weak: #FF0000;
+$fair: #FCF400;
+$good: #1187FF;
+$strong : #11AB5E;
+$open-sans : 'Open sans' , sans-serif;
+$lato : 'lato' , sans-serif;
+
+.button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  margin: 2px 4px;
+  font-size: 14px;
+  height: 38px;
+  cursor: pointer;
+  outline: none;
+  display: inline-flexbox;
+  transition: all 0.3s;
+  font-family: $open-sans;
+  font-weight:700;
+  &:focus {
+      outline: none;
+  }
+  &.full-width {
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  &.fixed-width {
+      width: 100px;
+  }
+  &.package-button {
+      color: white;
+      background-color: $btn-blue;
+      border-color: $btn-blue;
+      &:hover {
+          background-color: $btn-blue
+      }
+  }
+  &.button-primary {
+      color: white;
+      background-color: $btn-primary-color;
+      border-color: $btn-primary-color;
+      &:hover {
+          background-color: $btn-primary-color-hover;
+      }
+
+  }
+  &.button-primary-outline {
+      color: $btn-primary-color !important;
+      background-color: white !important;
+      border-color: $btn-primary-color !important;
+  }
+  &.button-black {
+      color: white;
+      background-color: $btn-black;
+      border-color: $btn-black;
+  }
+  &.button-cancel {
+      color: white;
+      background-color: $btn-cancel;
+      border-color: $btn-cancel;
+  }
+  &.button-cancel-outline {
+      color: $btn-cancel;
+      background-color: #ffffff;
+      border-color: $btn-cancel;
+  }
+  &:disabled {
+      background-color: #CCCCCC !important;
+      color: #888787 !important;
+      border-color: #CCCCCC !important;
+      &:hover {
+          background-color: #CCCCCC !important;
+          color: #919191 !important;
+          border-color: #CCCCCC !important;
+      }
+  }
+  .rounded-border {
+      border-radius: 15px !important;
+  }
+  &.bg-none {
+      background-color: transparent;
+      border: none;
+  }
+  &.button-red {
+      color: $btn-primary-color;
+      font-weight: 400;
+      background-color: transparent;
+  }
+  &.button-blue {
+      color: $btn-blue;
+      font-weight: 400;
+  }
+  &.button-grey {
+      color: #616161;
+
+      &:disabled {
+          background:  transparent !important;
+          color: #a3a3a3 !important
+      }
+  }
+  &.button-grey-outline {
+      color: #888787 !important;
+      border: 1px solid #888787;
+      background-color: transparent;
+      &:focus {
+          color: white !important;
+          border-color: #888787;
+          background-color: #888787;
+      }
+      &:hover {
+          color: white !important;
+          border-color: #888787;
+          background-color: #888787;
+      }
+  }
+
+  &.upload-btn {
+      font-weight: 400;
+  }
+  &.button-edit {
+      border: none;
+      background: transparent;
+      color: $text-color;
+      height: auto;
+      padding: 5px;
+
+      &:focus {
+          color: $primary-color;
+      }
+  }
+  &.button-plus {
+      border: none;
+      background: transparent;
+      color: $text-color;
+      height: auto;
+      padding: 5px;
+
+      &:focus {
+          color: $primary-color;
+      }
+  }
+}

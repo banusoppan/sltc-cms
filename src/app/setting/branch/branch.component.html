@@ -1,0 +1,59 @@
+<section class="mt-0">
+    <div class="container">
+        <form  [formGroup]="branchForm" (ngSubmit)="branchForm.valid && onSubmit()">
+            <div class="row fixed-padding">
+                <div class="col-12"><p class="welcome-text">Add more information about your education.</p></div>
+                <div class="col-12 p-0 section">
+                    <h5 class="section-heading">Education</h5>
+                    <button class="plus" type="button"  id="educationPlus"   (click)="addEdubutton()" ><span class="text">Add more </span> <i class="fas fa-plus" ></i></button>
+                    <!-- [disabled]="controls('program').invalid || controls('university').invalid " -->
+                </div>
+                <div class="col-12 p-0">
+                    <div class="row" id="educationSection">
+                        <div formArrayName="branches" *ngFor="let branch of branchForm.get('branches')['controls'];let i = index" class="col-12">
+                            <!-- *ngFor="let skill educationalForm.get('skills').controls" -->
+
+                            <div [formGroupName]="i">
+                                <div class="" *ngIf="i>0">
+                                    <button type="button" class="removebtn"  id="educationPlus"   (click)="removeSkillButtonClick(i)"  ><i class="far fa-times"></i></button>
+                                </div>
+                                <div class="col-12 mt-2 program-section p-0" >
+
+                                    <div class="field-container">
+                                        <mat-form-field appearance="outline">
+                                        <mat-label>Branch Name</mat-label>
+                                        <input type="text" formControlName="branchName"  name="branchName" matInput placeholder="Branch Name" autocomplete="off" >
+                                        <mat-error *ngIf="branch.controls.branchName.errors?.required">Barnch Name is required</mat-error>
+                                        <mat-error *ngIf="branch.controls.branchName.errors?.minlength || branch.controls.branchName.errors?.maxlength">Should be 3-70 characters</mat-error>
+
+                                         <!-- <mat-error *ngIf="controls('career')?.required">Age</mat-error>   -->
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="field-container">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Address</mat-label>
+                                            <input type="text" formControlName="address" name="address" matInput placeholder="Address" autocomplete="off">
+                                            <mat-error *ngIf="branch.controls.address.errors?.required">Address is required</mat-error>
+                                            <mat-error *ngIf="branch.controls.address.errors?.minlength || branch.controls.address.errors?.maxlength">Should be 2-100 characters</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 p-0 mt-2">
+                    <div class="field-wrapper text-center">
+                        <button  type="submit" class="button button-primary full-width" [disabled]="branchForm.invalid || loading" mat-raised-button >Save</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</section>
+
+

@@ -1,0 +1,157 @@
+
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="registerForm" (submit)="onSavePost()"  *ngIf="!isLoading">
+    <mat-form-field >
+    <input matInput type="text" formControlName="firstName" name="firstName"   placeholder="First Name" >
+    <mat-error *ngIf="registerForm.get('firstName').invalid">Please enter First name</mat-error>
+  </mat-form-field>
+  <br><br>
+
+  <mat-form-field >
+    <input matInput type="text" formControlName="lastName" name="lastName"   placeholder="Last Name">
+    <mat-error *ngIf="registerForm.get('lastName').invalid">Please enter Last Name</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="fullName" name="fullName"   placeholder="Full Name">
+    <mat-error *ngIf="registerForm.get('fullName').invalid">Please enter Full Name</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >Title</span></mat-label>
+    <mat-select  formControlName="title" name="title">
+        <mat-option value="Mr">Mr</mat-option>
+        <mat-option value="MISS">Miss</mat-option>
+        <mat-option value="Mrs">Mrs</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('title')?.invalid"> Title is required</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="nic" name="nic"   placeholder="NIC">
+    <mat-error *ngIf="registerForm.get('nic').invalid">Please enter valid NIC</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="email" name="email"   placeholder="Email"  [email]="true">
+    <mat-error *ngIf="registerForm.get('email').invalid">Please enter valid Email</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="mobile" name="mobile"   placeholder="Mobile Number" >
+    <mat-error *ngIf="registerForm.get('mobile').invalid">Please enter valid Mobile Number</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="address1" name="address1"   placeholder="Address (House No.)" >
+    <mat-error *ngIf="registerForm.get('address1').invalid">Please enter valid Address (House No.)</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="address2" name="address2"   placeholder="Address (Street)" >
+    <mat-error *ngIf="registerForm.get('address2').invalid">Please enter valid Address (Street)</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="address3" name="address3"   placeholder="Address (City)" >
+    <mat-error *ngIf="registerForm.get('address3').invalid">Please enter valid Address (City)</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >District</span></mat-label>
+    <mat-select  formControlName="district" name="district">
+        <mat-option value="Ampara">Ampara</mat-option>
+        <mat-option value="Anuradhapura">Anuradhapura</mat-option>
+        <mat-option value="Badulla">Badulla</mat-option>
+        <mat-option value="Batticaloa">Batticaloa</mat-option>
+        <mat-option value="Colombo">Colombo</mat-option>
+        <mat-option value="Galle">Galle</mat-option>
+        <mat-option value="Gampaha">Gampaha</mat-option>
+        <mat-option value="Hambantota">Hambantota</mat-option>
+        <mat-option value="Jaffna">Jaffna</mat-option>
+        <mat-option value="Kaluthara">Kaluthara</mat-option>
+        <mat-option value="Kandy">Kandy</mat-option>
+        <mat-option value="Kegalle">Kegalle</mat-option>
+        <mat-option value="Killinochchi">Killinochchi</mat-option>
+        <mat-option value="Kurunegala">Kurunegala</mat-option>
+        <mat-option value="Mannar">Mannar</mat-option>
+        <mat-option value="Matale">Matale</mat-option>
+        <mat-option value="Moneragala">Moneragala</mat-option>
+        <mat-option value="Mullaitivu">Mullaitivu</mat-option>
+        <mat-option value="Nuwara Eliya">Nuwara Eliya</mat-option>
+        <mat-option value="Polonnaruwa">Polonnaruwa</mat-option>
+        <mat-option value="Puttalam">Puttalam</mat-option>
+        <mat-option value="Ratnapura">Ratnapura</mat-option>
+        <mat-option value="Trincomalee">Trincomalee</mat-option>
+        <mat-option value="Vavuniya">Vavuniya</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('district')?.invalid"> District is required</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >Preferable Language for Aptitude Test </span></mat-label>
+    <mat-select  formControlName="testLanguage" name="testLanguage">
+        <mat-option value="English">English</mat-option>
+        <mat-option value="Sinhala">Sinhala</mat-option>
+        <mat-option value="Tamil">Tamil</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('testLanguage')?.invalid"> Please select a Language</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >How did you get to know about the programme </span></mat-label>
+    <mat-select  formControlName="awareness" name="awareness">
+        <mat-option value="News Paper">News Paper</mat-option>
+        <mat-option value="Social Media">Social Media</mat-option>
+        <mat-option value="TV & Radio">TV & Radio</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('awareness')?.invalid"> Please select a Option</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >What do you like most about SLTC </span></mat-label>
+    <mat-select  formControlName="likedMost" name="likedMost">
+        <mat-option value="Government Affliation">Government Affliation</mat-option>
+        <mat-option value="Global Partnership">Global Partnership</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('likedMost')?.invalid"> Please select a Option</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >Type of your highest education</span></mat-label>
+    <mat-select  formControlName="highestEducation" name="highestEducation">
+        <mat-option value="A/L">A/L</mat-option>
+        <mat-option value="O/L">O/L</mat-option>
+
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('highestEducation')?.invalid"> Please select a Highest Education</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <mat-label><span >I would like to participate for Uni Prep </span></mat-label>
+    <mat-select  formControlName="uniPreparation" name="uniPreparation">
+        <mat-option value="yes">YES</mat-option>
+        <mat-option value="no">NO</mat-option>
+    </mat-select>
+    <mat-error *ngIf="registerForm.get('uniPreparation')?.invalid"> Please select a Option</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="text" formControlName="userName" name="userName"   placeholder="User Name">
+    <mat-error *ngIf="registerForm.get('userName').invalid">Please enter User Name</mat-error>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field >
+    <input matInput type="password" formControlName="password" name="password"   placeholder="Password">
+    <mat-error *ngIf="registerForm.get('password').invalid">Please enter Password</mat-error>
+  </mat-form-field>
+  <br><br>
+
+    <button class="button full-width" mat-raised-button color="accent" type="submit">Submit</button>
+
+  </form>
+
+
+</mat-card>
+

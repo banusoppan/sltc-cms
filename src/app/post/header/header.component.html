@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><a routerLink="/">SLTC</a></span>
+    <span class="spacer"></span>
+    <ul>
+
+    <li *ngIf="userIsAuthenticated">
+      <!--<a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>-->
+      <button class="button full-width" mat-button [matMenuTriggerFor]="menu">Post</button>
+      <mat-menu #menu="matMenu">
+        <button class="button full-width" mat-menu-item routerLink="/create">Create Post</button>
+        <button class="button full-width" mat-menu-item routerLink="/">View All Post</button>
+      </mat-menu>
+    </li>
+
+
+    <li *ngIf="userIsAuthenticated">
+      <button class="button full-width" mat-button [matMenuTriggerFor]="menu2" >Admin</button>
+      <mat-menu #menu2="matMenu">
+        <button class="button full-width" mat-menu-item routerLink="/signup">Create New Admin</button>
+        <button class="button full-width" mat-menu-item routerLink="/admin/view">View Admin</button>
+      </mat-menu>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button class="button full-width" mat-button [matMenuTriggerFor]="menu1">Student</button>
+      <mat-menu #menu1="matMenu">
+        <button class="button full-width" mat-menu-item routerLink="/student/register">Register</button>
+        <button class="button full-width" mat-menu-item routerLink="/student/list">Student List</button>
+      </mat-menu>
+    </li>
+
+    <!--<li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a>
+    </li>-->
+    <li *ngIf="userIsAuthenticated">
+      <button class="button full-width" mat-button routerLink="/organisation">Setting</button>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a class="button full-width" mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button class="button full-width" mat-button (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
+  </mat-toolbar-row>
+</mat-toolbar>

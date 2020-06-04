@@ -1,0 +1,49 @@
+<mat-card>
+  <div class="col-12 p-0 section">
+    <h6 class="section-heading">Logo
+      <button class="button button-edit" routerLink="/organisation/change-logo"><i class="fas fa-pencil"></i></button>
+    </h6>
+    <div class="image-preview">
+      <img [src]="iconPath" >
+    </div>
+  </div>
+  <div class="col-12 p-0 section">
+    <h6 class="section-heading">Branches
+      <button class="button button-edit" routerLink="/organisation/add-branch"><i class="fas fa-pencil"></i></button>
+    </h6>
+    <div class="item-slider">
+      <div class="detail-card education" *ngFor="let branch of branches">
+        <div class="card-details w-100 p-1">
+            <p class="text-capitalize">{{branch.branchName}}</p>
+            <ul>
+                <li class="text-capitalize">{{branch.address}}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 p-0 section">
+    <h6 class="section-heading">Contact Details
+      <button class="button button-edit" routerLink="/organisation/contact-detail"><i class="fas fa-pencil"></i></button>
+    </h6>
+    <ul class="detail-list">
+      <li><span class="detail-heading">Email:</span><span class="detail ">{{email}}</span></li>
+      <li><span class="detail-heading">Mobile:</span><span class="detail">{{mobile}}</span></li>
+
+    </ul>
+  </div>
+  <div class="col-12 p-0 section">
+    <h6 class="section-heading">Social Media
+      <button class="button button-edit" routerLink="/organisation/social-media"><i class="fas fa-pencil"></i></button>
+    </h6>
+    <ul class="detail-list">
+      <li><span class="detail-heading">Facebook:</span><span class="detail ">{{facebook}}</span></li>
+      <li><span class="detail-heading">Instagram:</span><span class="detail">{{instagram}}</span></li>
+      <li><span class="detail-heading">Twitter:</span><span class="detail ">{{twitter}}</span></li>
+      <li><span class="detail-heading">LinkedIn:</span><span class="detail">{{linkedin}}</span></li>
+      <li><span class="detail-heading">Youtube:</span><span class="detail ">{{youtube}}</span></li>
+
+
+    </ul>
+  </div>
+</mat-card>

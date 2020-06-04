@@ -1,0 +1,14 @@
+
+$primary-color : #FF5F6D;
+$text-color : #888787;
+
+$open-sans : 'Open sans' , sans-serif;
+.msg-icon {
+    font-size: 40px !important;
+    color: $primary-color !important;
+}
+p {
+    color: $text-color;
+    font-size: 14px;
+    font-weight: $open-sans;
+}

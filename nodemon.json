@@ -1,0 +1,6 @@
+{
+  "env":{
+    "MONGO_ATLAS_PW" : "Banu@8939",
+    "JWT_TOKEN" : "sltc_demo_web_app"
+  }
+}

@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSave()"  *ngIf="!isLoading">
+    <mat-form-field>
+    <input matInput type="text" formControlName="email" name="email"   placeholder="Email">
+    <!--<mat-error *ngIf="form.get('facebook').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+  <br><br>
+  <mat-form-field>
+    <input matInput type="text" formControlName="mobile" name="mobile"   placeholder="Mobile">
+    <!--<mat-error *ngIf="form.get('link').invalid">Please enter link</mat-error>-->
+  </mat-form-field>
+
+
+
+
+  <br><br>
+    <button mat-raised-button color="accent" type="submit">save</button>
+
+  </form>
+
+
+</mat-card>
+
+
