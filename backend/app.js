@@ -12,7 +12,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
-mongoose.connect('mongodb+srv://sltc_user:'+process.env.MONGO_ATLAS_PW+'@cluster0-ch1z4.mongodb.net/sltc?w=majority&retryWrites=truemongodb+srv://sltc_user:<password>@cluster0-ch1z4.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true ,useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://banu:'+process.env.MONGO_ATLAS_PW+'@cluster0-frrbw.mongodb.net/sltc?w=majority&retryWrites=truemongodb+srv://sltc_user:<password>@cluster0-ch1z4.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true ,useUnifiedTopology: true})
 .then(()=>{
   console.log("connected to database");
 })
